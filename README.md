@@ -19,6 +19,15 @@ $ docker pull mongo
 $ docker run -d --name db mongo
 $ docker run -p 3000:3000 --link db:db mean
 ```
+## ADMIN FIX
+
+Om auctions te beheren heb je admin rechten nodig. Als je een account registreert moet je het volgende doen:
+
+```bash
+$ sudo docker exec -i -t db bash
+$ mongo mean-dev
+$ db.users.update({}, { $set: { roles: ['authenticated', 'admin'] }})
+```
 
 ## Gulp (requires local mongo server)
 ```bash
