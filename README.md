@@ -11,12 +11,14 @@ Install with docker (you can use gulp if you have a local mongodb running)
 $ git clone https://github.com/SanderSander/Blub.git
 $ cd Blub
 $ docker build -t mean .
+```
 
 ## Running
 ```bash
 $ docker pull mongo
 $ docker run -d --name db mongo
 $ docker run -p 3000:3000 --link db:db mean
+```
 
 ## Gulp (requires local mongo server)
 ```bash
@@ -24,7 +26,7 @@ $ npm install -g gulp
 $ npm install -g bower
 $ npm install
 $ gulp
-
+```
 
 
 
