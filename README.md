@@ -2,6 +2,33 @@
 [![Dependencies Status](https://david-dm.org/linnovate/mean.svg)](https://david-dm.org/linnovate/mean)
 [![Gitter](https://badges.gitter.im/JoinChat.svg)](https://gitter.im/linnovate/mean?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
+# Sander:
+
+Install with docker (you can use gulp if you have a local mongodb running)
+
+## Building
+```bash
+$ git clone https://github.com/SanderSander/Blub.git
+$ cd Blub
+$ docker build -t mean .
+
+## Running
+```bash
+$ docker pull mongo
+$ docker run -d --name db mongo
+$ docker run -p 3000:3000 --link db:db mean
+
+## Gulp (requires local mongo server)
+```bash
+$ npm install -g gulp
+$ npm install -g bower
+$ npm install
+$ gulp
+
+
+
+
+
 # [![MEAN Logo](http://mean.io/system/assets/img/logos/meanlogo.png)](http://mean.io/) MEAN Stack
 
 MEAN is a framework for an easy starting point with [MongoDB](https://www.mongodb.org/), [Node.js](http://www.nodejs.org/), [Express](http://expressjs.com/), and [AngularJS](https://angularjs.org/) based applications. It is designed to give you a quick and organized way to start developing MEAN based web apps with useful modules like Mongoose and Passport pre-bundled and configured. We mainly try to take care of the connection points between existing popular frameworks and solve common integration problems.
