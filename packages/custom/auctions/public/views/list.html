@@ -1,0 +1,24 @@
+<section data-ng-controller="AuctionsController" data-ng-init="find()">
+  <ul class="auctions unstyled">
+    <li data-ng-repeat="auction in auctions">
+      <span>{{auction.created | date:'medium'}}</span> / Geldig tot: {{auction.endDate | date:'medium'}}
+      <span data-ng-hide="auction.isActive">Verlopen</span>
+      <span data-ng-hide="!auction.isActive">Actief</span>
+        <span>{{auction.user.name}}</span>
+      <h2>
+        <a data-ng-href="/auctions/{{auction._id}}">{{auction.title}}</a>
+        <span data-ng-if="hasAuthorization(auction)">
+          <a class="btn" href="/auctions/{{auction._id}}/edit">
+            <i class="glyphicon glyphicon-edit"></i>
+          </a>
+          <a class="btn" data-ng-click="remove(auction);">
+            <i class="glyphicon glyphicon-trash"></i>
+          </a>
+        </span>
+      </h2>
+      <div>{{auction.content}}</div>
+    </li>
+  </ul>
+
+  <h1 data-ng-hide="!auctions || auctions.length">No auctions yet.</h1>
+</section>
