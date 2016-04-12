@@ -6,6 +6,8 @@
 
 Install with docker (you can use gulp if you have a local mongodb running)
 
+test
+
 ## Building
 ```bash
 $ git clone https://github.com/SanderSander/Blub.git
